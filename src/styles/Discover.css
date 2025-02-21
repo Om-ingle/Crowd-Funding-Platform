@@ -1,0 +1,104 @@
+.discover-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-bar {
+    max-width: 600px;
+}
+
+.search-bar .form-control {
+    border-radius: 20px 0 0 20px;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #e5e7eb;
+    border-right: none;
+}
+
+.search-bar .btn {
+    border-radius: 0 20px 20px 0;
+    padding: 0.75rem 1.5rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    font-size: 2rem;
+    color: #2563eb;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    border: none;
+    color: #2563eb;
+}
+
+.nav-tabs .nav-link.active {
+    border: none;
+    color: #2563eb;
+    position: relative;
+}
+
+.nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2563eb;
+}
+
+.campaign-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-image {
+    height: 200px;
+    background: #e9ecef;
+    background-image: linear-gradient(45deg, #f8f9fa 25%, transparent 25%),
+                      linear-gradient(-45deg, #f8f9fa 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #f8f9fa 75%),
+                      linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+    background-size: 20px 20px;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
