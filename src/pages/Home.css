@@ -1,0 +1,79 @@
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(135deg, #226db8 0%, #6c757d 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0; /* Remove negative margin since we now handle padding in App.jsx */
+  color: white;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('https://images.unsplash.com/photo-1607274134639-043342705e6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBhdHRlcm58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60') repeat;
+  opacity: 0.1;
+}
+
+/* Campaign cards */
+.campaign-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaign-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+.campaign-image {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Progress bar */
+.campaign-progress {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.campaign-progress .progress-bar {
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
+
+/* Feature icons */
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .hero-section .btn-container {
+    justify-content: center !important;
+    margin-bottom: 2rem;
+  }
+}

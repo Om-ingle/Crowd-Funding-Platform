@@ -1,58 +1,74 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
+import { useNavigate, Link } from 'react-router-dom';
 
-const Signin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSignin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert('Successfully signed in!');
-    } catch (error) {
-      alert(error.message);
-    }
+const SignIn = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
-
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Sign in attempt with:', formData);
+    // Add authentication logic here
+    navigate('/');
+  };
+  
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container py-5">
       <div className="row justify-content-center">
-        <div className="col-md-6 col-lg-4">
-          <div className="card shadow-lg border-0">
+        <div className="col-md-6 col-lg-5">
+          <div className="card border-0 shadow-lg">
             <div className="card-body p-5">
-              <h2 className="text-center mb-4 brand-gradient">Welcome Back</h2>
-              <form onSubmit={handleSignin}>
+              <h2 className="text-center mb-4 fw-bold">Sign In</h2>
+              
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label className="form-label">Email address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    required
+                  <label htmlFor="email" className="form-label">Email address</label>
+                  <input 
+                    type="email" 
+                    className="form-control" 
+                    id="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
                   />
                 </div>
-                <div className="mb-4">
-                  <label className="form-label">Password</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                    required
+                
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input 
+                    type="password" 
+                    className="form-control" 
+                    id="password" 
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required 
                   />
                 </div>
-                <button type="submit" className="btn btn-primary w-100 mb-3">
-                  Sign In
-                </button>
-                <p className="text-center mb-0">
-                  Don't have an account? <Link to="/signup">Sign Up</Link>
-                </p>
+                
+                <div className="mb-3 form-check">
+                  <input type="checkbox" className="form-check-input" id="rememberMe" />
+                  <label className="form-check-label" htmlFor="rememberMe">Remember me</label>
+                </div>
+                
+                <button type="submit" className="btn btn-primary w-100 py-2 mb-3">Sign In</button>
+                
+                <div className="text-center">
+                  <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+                  <p><Link to="/forgot-password">Forgot password?</Link></p>
+                </div>
               </form>
             </div>
           </div>
@@ -62,4 +78,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default SignIn;

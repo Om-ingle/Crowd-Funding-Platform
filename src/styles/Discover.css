@@ -73,15 +73,15 @@
 
 .campaign-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
 .campaign-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 .campaign-image {
@@ -92,13 +92,78 @@
                       linear-gradient(45deg, transparent 75%, #f8f9fa 75%),
                       linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
     background-size: 20px 20px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .progress {
     height: 8px;
     border-radius: 4px;
+    margin: 15px 0;
+    background-color: #e9ecef;
 }
 
 .progress-bar {
     background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
+
+.category-tabs {
+    margin-bottom: 30px;
+}
+
+.category-tabs .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    text-transform: capitalize;
+}
+
+.search-section {
+    margin-bottom: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.filter-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.filter-section .form-check {
+    margin-bottom: 10px;
+}
+
+.category-pill {
+    display: inline-block;
+    padding: 5px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-pill:hover,
+.category-pill.active {
+    background-color: #2563eb;
+    color: white;
 }
